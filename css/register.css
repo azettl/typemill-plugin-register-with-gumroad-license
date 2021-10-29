@@ -4,9 +4,11 @@
 	margin-right: auto;
 	margin-top: 1em;
 }
+
 .registerWrapper a, .registerWrapper a:link, .registerWrapper a:visited{
 	color: lightseagreen;
 }
+
 .registerWrapper a:focus, .registerWrapper a:hover, .registerWrapper a:active{
 	text-decoration: none;
 }
@@ -28,6 +30,11 @@
 .registerHeader h1{
 	margin: 1em 0;
 }
+
+.registerHeader a, .registerHeader a:link, .registerHeader a:visited{
+	color:inherit;
+}
+
 .registerProgress{
 	position: relative;
 	width: 120px;

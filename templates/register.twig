@@ -23,6 +23,10 @@
 				</div>
 				<h1>{{ settings.plugins.register.registerheadline|default("Register Now!") }}</h1>
 
+				{% if settings.plugins.register.registerdescription %}
+					<p>{{ markdown(settings.plugins.register.registerdescription) }}</p>
+				{% endif %}
+				
 			</header>
 
 			<form method="POST" action="{{base_url}}/tm/register" autocomplete="off">

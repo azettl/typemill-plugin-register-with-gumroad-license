@@ -42,6 +42,12 @@ forms:
           placeholder: Register now!
           required: true
 
+        registerdescription:
+          type: textarea
+          label: Description for the registration form
+          placeholder: Add your description here and don't forget the link to your Gumroad product.
+          description: You can use markdown here.
+
         labelUsername:
           type: text
           label: Label for username input field
