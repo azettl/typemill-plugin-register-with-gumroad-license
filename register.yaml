@@ -1,7 +1,7 @@
-﻿name: Registration
+﻿name: Registration with Gumroad
 version: 1.2.0
-description: Add a public registration form under /tm/register and let users register as member.
-author: Trendschau
+description: Add a public registration form under /tm/register and let users register as member if they have a valid Gumroad license key to your product.
+author: Trendschau & Andreas Zettl
 homepage: https://trendschau.net
 licence: MIT
 paypal: https://paypal.me/typemill
