@@ -23,7 +23,7 @@
 
 				<fieldset class="auth">
 					<div class="formElement{{ errors.confirmationmail ? ' errors' : '' }}">
-						<label for="confirmationmail">{{ settings.plugins.register.labelConfirmationmail|default("Your Email") }} <abbr title="{{ __('required') }}">*</abbr></label>
+						<label for="confirmationmail">{{ settings.plugins.registergumroad.labelConfirmationmail|default("Your Email") }} <abbr title="{{ __('required') }}">*</abbr></label>
 						<input type="email" name="confirmationmail" value="{{ old.confirmationmail }}" required>
 						{% if errors.confirmationmail %}
 							<span class="error">{{ errors.confirmationmail | first }}</span>
@@ -39,7 +39,7 @@
 					<p><div class="g-recaptcha" data-sitekey="{{ recaptcha_webkey }}"></div></p>
 				{% endif %}
 
-				<input type="submit" value="{{ settings.plugins.register.labelEmailButton|default("Send confirmation email again") }}" />
+				<input type="submit" value="{{ settings.plugins.registergumroad.labelEmailButton|default("Send confirmation email again") }}" />
 				{{ csrf_field() | raw }}
 
 				<small><a href="{{base_url}}/tm/login">login</a><a href="{{base_url}}/tm/register" class="right">register</a></small>
