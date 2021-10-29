@@ -172,6 +172,32 @@ class Register extends Plugin
 		}
 		unset($params['g-recaptcha-response']);
 
+		# check gumroad license
+		$gumroad_curl = curl_init();
+
+		curl_setopt($gumroad_curl, CURLOPT_URL,"https://api.gumroad.com/v2/licenses/verify");
+		curl_setopt($gumroad_curl, CURLOPT_POST, 1);
+		curl_setopt(
+			$gumroad_curl, 
+			CURLOPT_POSTFIELDS,
+			"product_permalink=" 
+				. $settings['plugins']['register']['gumroadpermalink'] 
+				. "&license_key=" . $params['gumroad']
+		);
+
+		curl_setopt($gumroad_curl, CURLOPT_RETURNTRANSFER, true);
+
+		$gumroad_curl_result = curl_exec($gumroad_curl);
+
+		curl_close($gumroad_curl);
+		
+		$gumroad_result_json = json_decode($gumroad_curl_result);
+		
+		if($gumroad_result_json->success != 'true'){
+			$this->container['flash']->addMessage('error', 'Incorrect Gumroad License Key');
+			return $response->withRedirect($this->container['router']->pathFor('register.show'));
+		}
+
 		$validate		= new Validation();
 		$user			= new User();
 

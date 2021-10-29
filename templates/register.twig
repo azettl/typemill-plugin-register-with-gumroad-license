@@ -49,6 +49,13 @@
 							<span class="error">{{ errors.password | first }}</span>
 						{% endif %}
 					</div>
+					<div class="formElement{{ errors.gumroad ? ' errors' : '' }}">
+						<label for="gumroad">{{ settings.plugins.register.labelGumroad }} <abbr title="{{ __('required') }}">*</abbr></label>
+						<input type="password" name="gumroad" required autocomplete="off">
+						{% if errors.gumroad %}
+							<span class="error">{{ errors.gumroad | first }}</span>
+						{% endif %}
+					</div>
 					<div class="formElement personalMail">
 						<label for="personalMail">Personal E-Mail</label>
 						<input type="text" name="personalMail">

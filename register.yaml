@@ -59,6 +59,11 @@ forms:
           label: Label for password input-field
           required: true
 
+        labelGumroad:
+          type: text
+          label: Label for Gumroad License input-field
+          required: true
+
         labelButton:
           type: text
           label: Label for Button
@@ -202,3 +207,13 @@ forms:
           rows: 5
           label: Text after successful registration (use markdown)
           placeholder: Congratulations, your registration was successful and we sent you a registration e-mail. Please check your e-mail account and confirm your registration.
+    
+    gumroad:
+      type: fieldset
+      legend: Gumroad Settings
+      fields:
+        gumroadpermalink:
+          type: text
+          label: Product Permalink
+          placeholder: ABCDE
+          required: true
